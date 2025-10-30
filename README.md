@@ -18,4 +18,5 @@ Neovim Lazy setup environment files for myself suggested by copilot
         ├── nvim-tree.lua
         ├── lsp.lua
         ├── treesitter.lua
-        └── cmp.lua
+        ├── cmp.lua
+        └── none-ls.lua
