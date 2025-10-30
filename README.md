@@ -15,4 +15,7 @@ Neovim Lazy setup environment files for myself suggested by copilot
     └── plugins/
         ├── lualine.lua
         ├── telescope.lua
-        └── nvim-tree.lua
+        ├── nvim-tree.lua
+        ├── lsp.lua
+        ├── treesitter.lua
+        └── cmp.lua
