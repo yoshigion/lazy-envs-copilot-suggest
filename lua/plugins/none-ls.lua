@@ -8,22 +8,20 @@ return {
     null_ls.setup({
       sources = {
         -- フォーマッタ
-        null_ls.builtins.formatting.stylua,       -- Lua 用
-        null_ls.builtins.formatting.prettierd,    -- JS/TS/JSON/Markdown 用
-        null_ls.builtins.formatting.shfmt,        -- Shell 用
+        null_ls.builtins.formatting.stylua.with({ filetypes = { "lua" } }),
+        null_ls.builtins.formatting.prettierd.with({ filetypes = { "javascript", "typescript", "json", "markdown" } }),
+        null_ls.builtins.formatting.black.with({ filetypes = { "python" } }),
 
-        -- リンタ
-        null_ls.builtins.diagnostics.eslint_d,    -- JS/TS 用
-        null_ls.builtins.diagnostics.shellcheck,  -- Shell 用
+        -- Linter
+        null_ls.builtins.diagnostics.eslint_d.with({ filetypes = { "javascript", "typescript" } }),
+        null_ls.builtins.diagnostics.shellcheck.with({ filetypes = { "sh", "bash", "zsh" } }),
+        null_ls.builtins.diagnostics.flake8.with({
+          filetypes = { "python" },
+          condition = function(utils)
+            return utils.root_has_file({ ".flake8", "setup.cfg", "pyproject.toml" })
+          end,
+        }),
       },
-      on_attach = function(client, bufnr)
-        -- LSP と同じように keymap を設定可能
-        local opts = { noremap = true, silent = true, buffer = bufnr }
-        local map = vim.keymap.set
-        map("n", "<leader>f", function()
-          vim.lsp.buf.format({ async = true })
-        end, opts)
-      end,
     })
   end,
 }
