@@ -8,7 +8,7 @@ Neovim Lazy setup environment files for myself suggested by copilot
 └── lua/
     ├── configs-setup.lua
     ├── plugins-setup.lua
-    ├── config/
+    ├── configs/
     │  ├── options.lua
     │  ├── keymaps.lua
     │  └── autocmds.lua
