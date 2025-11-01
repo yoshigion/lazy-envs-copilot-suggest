@@ -1,4 +1,4 @@
 -- init.lua
 -- Neovim のエントリーポイント
-require("config")   -- 基本設定（options, keymaps, autocmds）
-require("lazy")     -- プラグイン管理
+require("configs-setup")  -- 基本設定（options, keymaps, autocmds）
+require("plugins-setup")  -- プラグイン管理

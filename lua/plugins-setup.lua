@@ -1,5 +1,5 @@
--- lazy.lua
--- Lazy.nvim の初期化とプラグイン定義
+-- plugins-setup.lua
+-- lazy.nvim のセットアップ
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- プラグイン定義
 require("lazy").setup({
   { import = "plugins.lualine" },
   { import = "plugins.telescope" },
