@@ -18,5 +18,6 @@ require("lazy").setup({
   { import = "plugins.lualine" },
   { import = "plugins.telescope" },
   { import = "plugins.nvim-tree" },
+  { import = "plugins.treesitter" },
   -- 他のプラグインもここに import で追加
 })
