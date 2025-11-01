@@ -5,9 +5,9 @@ Neovim Lazy setup environment files for myself suggested by copilot
 
 ~/.config/nvim/
 ├── init.lua
-├── config.lua
-├── lazy.lua
 └── lua/
+    ├── configs-setup.lua
+    ├── plugins-setup.lua
     ├── config/
     │  ├── options.lua
     │  ├── keymaps.lua
