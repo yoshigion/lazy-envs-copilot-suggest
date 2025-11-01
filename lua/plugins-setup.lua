@@ -15,9 +15,18 @@ vim.opt.rtp:prepend(lazypath)
 
 -- プラグイン定義
 require("lazy").setup({
-  { import = "plugins.lualine" },
-  { import = "plugins.telescope" },
+  -- tree file list
   { import = "plugins.nvim-tree" },
+
+  -- status line
+  { import = "plugins.lualine" },
+
+  -- onedark color scheme
+  --{ "navarasu/onedark.nvim" },
+
+  --{ import = "plugins.telescope" },
+
+  -- tree sitter
   { import = "plugins.treesitter" },
   -- 他のプラグインもここに import で追加
 })
