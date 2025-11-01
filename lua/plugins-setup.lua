@@ -15,8 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- プラグイン定義
 require("lazy").setup({
-  { import = "plugins.lualine" },
-  { import = "plugins.telescope" },
-  { import = "plugins.nvim-tree" },
-  -- 他のプラグインもここに import で追加
+  spec = {
+    { import = "plugins" },  -- lua/plugins/ ディレクトリを自動読み込み
+  },
+  defaults = {
+    lazy = false,            -- デフォルトで即ロード
+    version = false,         -- バージョン固定しない（最新を使う）
+  },
+  --install = { colorscheme = { "tokyonight", "habamax" } },
+  checker = { enabled = true }, -- 自動アップデートチェック
 })
