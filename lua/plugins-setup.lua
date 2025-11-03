@@ -27,6 +27,6 @@ require("lazy").setup({
   --{ import = "plugins.telescope" },
 
   -- tree sitter
-  { import = "plugins.treesitter" },
+  { import = "plugins.nvim-treesitter" },
   -- 他のプラグインもここに import で追加
 })

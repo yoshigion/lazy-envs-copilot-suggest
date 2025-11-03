@@ -1,6 +1,9 @@
 -- lua/plugins/treesitter.lua
+-- tree sitter highlighting settings
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master",
+  lazy = false,
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({
@@ -8,8 +11,12 @@ return {
         "lua", "python", "bash",
         "markdown", "vim",
       },
-      highlight = { enable = true },
-      indent = { enable = true },
+      indent = {
+	enable = true
+      },
+      highlight = {
+        enable = true
+      },
     })
   end,
 }
