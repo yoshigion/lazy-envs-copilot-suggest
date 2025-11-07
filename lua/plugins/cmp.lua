@@ -1,10 +1,15 @@
 -- lua/plugins/cmp.lua
 return {
   "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-cmdline" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "L3MON4D3/LuaSnip" },
+    { "rafamadriz/friendly-snippets" },
   },
   config = function()
     local cmp = require("cmp")
@@ -37,10 +42,13 @@ return {
           end
         end, { "i", "s" }),
       }),
-      sources = {
+      sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
-      },
+        { name = "buffer" },
+        { name = "path" },
+        --{ name = "copilot" }, -- ← copilot-cmp を使う場合
+      }),
     })
   end,
 }
