@@ -9,6 +9,13 @@ vim.g.ruby_host_prog = '~/.rbenv/versions/3.4.7/bin/ruby'
 -- disable perl provider
 vim.g.loaded_perl_provider = 0
 
+---- nvim-tree.lua
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
 --vim.opt.tabstop = 4
 --vim.opt.shiftwidth = 4
 --vim.opt.expandtab = true
